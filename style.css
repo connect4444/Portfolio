@@ -1,0 +1,208 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary-color: #e94e77; /* Bright pink for links */
+  --hover-color: #f76c6c; /* Light red for hover */
+  --background-color: #111; /* Darker black for background */
+  --card-background: #1f1f1f; /* Dark gray for card background */
+  --text-color: #ffffff; /* White text */
+  --border-color: #2c2c2c; /* Slightly lighter border color */
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* Global Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 12px 24px var(--shadow-light);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--text-color);
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 240px;
+  border-radius: 15px;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 5px solid #333;
+  box-shadow: 0 12px 24px var(--shadow-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInImage 1s forwards; /* Apply fade-in animation */
+  animation-delay: 1s; /* Delay of 1 second */
+}
+
+.profile:hover .profile-photo {
+  transform: scale(1.1);
+  box-shadow: 0 16px 32px var(--shadow-dark);
+}
+
+/* Paragraph Styles */
+.bio p {
+  margin: 0 0 20px; /* Space below each paragraph */
+  font-size: 1.2em; /* Slightly larger font size for emphasis */
+  line-height: 1.8; /* Improved line spacing for readability */
+  color: var(--text-color); /* Keep the text color consistent */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.05)); /* Subtle gradient background */
+  padding: 20px; /* Ample padding for a comfortable read */
+  border-radius: 15px; /* Rounded corners for a modern look */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for subtle separation */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  margin-left: 17px;
+  padding: 30px; /* Increase padding to add space inside the container */
+}
+
+.bio p:hover {
+  transform: translateY(-8px) scale(1.02); /* Lift and slightly scale up on hover */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)); /* Enhance the gradient background on hover */
+  border-color: var(--primary-color); /* Highlight border color on hover */
+}
+
+.bio p::before {
+  display: block;
+  text-align: center;
+}
+
+.bio p::after {
+  display: block;
+  text-align: center;
+  margin-top: 10px; /* Space between text and icon */
+}
+
+
+
+/* Links Section */
+.links {
+  margin-top: 30px;
+}
+
+.links h2 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+}
+
+/* Link Styles */
+.links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 12px 0;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInLinks 1s forwards; /* Apply fade-in animation */
+  animation-delay: 1s; /* Delay of 1 second */
+}
+
+.links a:hover {
+  color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+/* List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
